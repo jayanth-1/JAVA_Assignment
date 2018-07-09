@@ -34,7 +34,6 @@ class Alphabets{
 		             count++;
 		           hashString[i] = false;
             }
-
 		}
 
                   if(count==26)                               // Checking if a-z alphabets present or not
@@ -42,12 +41,9 @@ class Alphabets{
                      return answer1; 
         }
 
-        }                                           
- 
+        }                                          
 
                   return answer2;
-
-
 	}
 
 	public static void main(String[] args)
