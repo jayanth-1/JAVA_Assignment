@@ -36,7 +36,7 @@ public void searchingFiles(String directoryName,String pattern){
 
      } 
 
-  catch(Exception e)
+   catch(Exception e)
    {
       System.out.println("Check Regular expression it is not valid \n");
    }
