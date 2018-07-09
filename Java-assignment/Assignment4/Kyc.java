@@ -51,40 +51,40 @@ class Kyc
 	  long plu=Math.abs(date2.getTime()-plus.getTime());
 	  
 	  long smallest = Math.min(ori, Math.min(min, plu));
-      if(smallest==ori)
-      	anni=original;
-      else if(smallest==min)
-      	anni=minus;
-      else
-      	anni=plus;
+          if(smallest==ori)
+      	    anni=original;
+          else if(smallest==min)
+      	    anni=minus;
+          else
+      	    anni=plus;
       
-       //now calculatnig the Range
-       Date first=null;
-       Date second=null;
-       Calendar calendar3 = Calendar.getInstance();
-       calendar3.setTime(anni);
-       //first is the date that is before 30 days of anniversary
-       calendar3.add(Calendar.DATE,-30);
-       first=calendar3.getTime();
-       //second is the date that is after 30 days of anniversary
-       calendar3.add(Calendar.DATE,60);
-       second=calendar3.getTime();
+          //now calculatnig the Range
+          Date first=null;
+          Date second=null;
+          Calendar calendar3 = Calendar.getInstance();
+          calendar3.setTime(anni);
+          //first is the date that is before 30 days of anniversary
+          calendar3.add(Calendar.DATE,-30);
+          first=calendar3.getTime();
+          //second is the date that is after 30 days of anniversary
+          calendar3.add(Calendar.DATE,60);
+          second=calendar3.getTime();
        
-       //now comparing dates of Range to not include date of future
-       String answer3 = "No range" ;
-       String answer1;String answer2;
-	   if(!first.before(date2)&&!second.before(date2))
+          //now comparing dates of Range to not include date of future
+          String answer3 = "No range" ;
+          String answer1;String answer2;
+	  if(!first.before(date2)&&!second.before(date2))
 	   	   return answer3;
-	    	//System.out.println("No Range");
+	 
 	  else if(!second.before(date2))
 	     {  
 	     	String str=dateFormat.format(first);
-            String str1=dateFormat.format(date2);
-            answer1 = str+ " " + str1;
-            return answer1;
+                String str1=dateFormat.format(date2);
+                answer1 = str+ " " + str1;
+                return answer1;
           
 	      }
-	   else
+	  else
 	   	  {  
 	   	  	 String str2=dateFormat.format(first);
 	   	  	 String str3=dateFormat.format(second);
@@ -92,20 +92,20 @@ class Kyc
 
 	   	  	 }
 
-       return answer2;
+           return answer2;
     }
-    public static void main(String[] args) throws Exception {
-    	Scanner sc = new Scanner(System.in);
-    	System.out.println("Enter number of test cases : \n");
-        int n=sc.nextInt();
-       while(n!=0)
-    	{ 
-    	  System.out.println("Enter the signup date and current date");
-    	  String signup=sc.next();
-    	  String current=sc.next();
-    	  //System.out.println("\nRange is");
-    	  System.out.println(Kyc.rangeCalculation(signup,current));
-    	  n--;
+ 
+       public static void main(String[] args) throws Exception {
+    	  Scanner sc = new Scanner(System.in);
+    	  System.out.println("Enter number of test cases : \n");
+          int n=sc.nextInt();
+          while(n!=0)
+    	  { 
+    	    System.out.println("Enter the signup date and current date");
+    	    String signup=sc.next();
+    	    String current=sc.next();
+    	    System.out.println(Kyc.rangeCalculation(signup,current));
+    	    n--;
     	}
     }
 }
