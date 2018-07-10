@@ -1,33 +1,24 @@
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
+import static org.junit.Assert.assertEquals;
 import java.util.*;
-import java.io.*;
 import java.lang.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.io.*;
 
-class TestPingMedianTime{
+@RunWith(JUnit4.class)
+public class TestPingMedianTime1 {
+	
+	@Test
+	public static void main(String[] args) {
 
-	  public static void main(String[] args)
-	  {
-	         List<String> neg_testcase = Arrays.asList("0.0","0.85.0");
-             List<String> pos_testcase = Arrays.asList("127.0.0.1", "101.0.0.1");
-             int i;
-             PingMedianTime pingObj = new PingMedianTime();
-             System.out.println("Running Positive test case \n\n");
-             for(i=0;i<pos_testcase.size();i++)
-             {
-               System.out.println("test case " + i + " " + pos_testcase.get(i) + "\n");
-               System.out.println(pingObj.computeMedian(pos_testcase.get(i),2));
-               System.out.println("\n");
+		double d1 = 0.9;
+		double d2 = 0.8;
+		double d3 = (d1 + d2)/2;
+		assertEquals(d1,PingMedianTime.oddPing("0.9"));
+		assertEquals(d3,PingMedianTime.evenPing("0.9","0.8"));
+		assertFalse(PingMedianTime.validate("0.0.1"));
+		assertTrue(PingMedianTime.validate("127.0.0.1"));
 
-             }
-             for(i=0;i<neg_testcase.size();i++)
-             {
-                System.out.println("test case " + i + " " + neg_testcase.get(i) + "\n");
-                System.out.println(pingObj.computeMedian(neg_testcase.get(i),2));
-                System.out.println("\n");
-
-             }
-
-    
-	  }
+}
 }

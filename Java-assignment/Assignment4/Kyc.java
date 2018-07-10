@@ -12,7 +12,8 @@ class Kyc
 
 	public static String rangeCalculation(String signup, String current) throws Exception
 	{ 
-		
+	  if(signup.equals(null) || current.equals(null))
+	  	throw new NullPointerException();
 	  SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
 	  Date date1=null;Date date2=null;
 	  Date anni=null;Date original=null;
@@ -88,7 +89,7 @@ class Kyc
            return answer2;
     }
     
-}
+
 
 
        public static void main(String[] args) throws Exception {
@@ -104,4 +105,5 @@ class Kyc
     	    System.out.println(Kyc.rangeCalculation(signup,current));
     	  }
        }
-}
+   }
+
