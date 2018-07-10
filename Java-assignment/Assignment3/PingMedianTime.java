@@ -17,7 +17,7 @@ class PingMedianTime{
                        */
                       public static boolean validate(final String ip) {
                           return PATTERN.matcher(ip).matches();
-}
+                      }
 
                       /* Takes one input
                        * @param input as a string
@@ -28,7 +28,7 @@ class PingMedianTime{
                         Double f = Double.parseDouble(odd);
                         return f;
     
-}
+                      }
 
                        /* Takes one input
                         * @param input as a string
@@ -40,7 +40,7 @@ class PingMedianTime{
                          Double f2 = Double.parseDouble(next_mid);
                          Double f3 = (f1 + f2 )/2 ;
                          return f3;
-}
+                      }
 
                       /* Takes two inputs and returns median of ping time
                        * @param 1st input is a string contains ip address
@@ -63,7 +63,7 @@ class PingMedianTime{
                                while ((inputLine = in.readLine()) != null) {
                                   System.out.println(inputLine);
                                   pingResult += inputLine;
-    }
+                               }
                                in.close();
 
                                List<String> time = new ArrayList<String>();
@@ -73,27 +73,27 @@ class PingMedianTime{
                                   pingResult = pingResult.substring(pingResult.indexOf("time="));
                                   time.add(pingResult.substring(5,10));
                                   pingResult = pingResult.substring(10); 
-     }
+                               }
 
                                int d = time.size()/2;
                                int re = time.size()%2;
                                if(re == 1){
                                   ans = PingMedianTime.oddPing(time.get(d));
-       }
+                              }
 
                                else{
                                   ans   = PingMedianTime.evenPing(time.get(d-1),time.get(d));
     
-}
-     }
+                                  }
+                                  }
 
                           catch(Exception e)
                           {
                              System.out.println(e);
-}
+                          }
 
                                 return ans ;
-}
+                        }
 
 
 	             public static void main(String[] args)
@@ -111,12 +111,12 @@ class PingMedianTime{
                                System.out.println("Enter how many times to ping : \n");
                                n = sc.nextInt();
                                System.out.println( "Median of time taken to ping "+ pingObj.computeMedian(ip,n));
-        }
+                             }
                              else{
                                  System.out.println("Please enter valid ip  \n");
-        }
-    }
+                             }
+                           }
 
-    }
+                  }
 }
 

@@ -23,23 +23,23 @@ public void searchingFiles(String directoryName,String pattern){
               Pattern  expression = Pattern.compile(pattern);
               // Now create matcher object.
               Matcher match = expression.matcher(file.getName());   // matching file name with pattern
-              if(match.matches()){                         // if matches
+               if(match.matches()){                         // if matches
                                       
-               System.out.println(file.getAbsolutePath()); // printing absolute path
-             }
+                 System.out.println(file.getAbsolutePath()); // printing absolute path
+               }
              }
              else if (file.isDirectory()){
                 searchingFiles(file.getAbsolutePath(),pattern); // recursivley searching files directories & subdirectories
-            }
+             }
         }
         
 
-     } 
+      } 
 
    catch(Exception e)
-   {
-      System.out.println("Check Regular expression it is not valid \n");
-   }
+    {
+       System.out.println("Check Regular expression it is not valid \n");
+    }
 }
 
 
@@ -53,10 +53,10 @@ public void searchingFiles(String directoryName,String pattern){
       Scanner sc = new Scanner(System.in);  
       String pattern = sc.next();
       obj.searchingFiles(directory_name,pattern);
-}
+    }
 
 
-}
+  }
 
 }
 

@@ -14,9 +14,9 @@ public class TestAlphabets {
 
                 Alphabets alphabet = new Alphabets();
                 assertEquals(alphabet.checkingAlphabets("@!abcdefghijklmnopqrstuvwxyz"),"String contains all alphabets a-z(case insensitive) \n");
-		assertEquals(alphabet.checkingAlphabets("ftgybj"),"String doesn't contains 26 alphabets");
-		assertEquals(alphabet.checkingAlphabets(""),"String doesn't contains 26 alphabets");
-
+		        assertEquals(alphabet.checkingAlphabets("ftgybj"),"String doesn't contains 26 alphabets");
+		        assertEquals(alphabet.checkingAlphabets(""),"String doesn't contains 26 alphabets");
+		        assertEquals(alphabet.checkingAlphabets(null),"String doesn't contains 26 alphabets");
 
 		}
 }
