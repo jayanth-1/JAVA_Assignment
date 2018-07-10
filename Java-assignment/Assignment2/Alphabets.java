@@ -16,34 +16,24 @@ class Alphabets{
 		String str = s.toLowerCase();
 		String answer1 = "String contains all alphabets a-z(case insensitive) \n" ;
 		String answer2 = "String doesn't contains 26 alphabets" ;
-    boolean[] hashString = new boolean[26];
+    HashMap<Character, Boolean> hashString = new HashMap<>();
 		int i = 0;
     if(s.length()>0)
     {
 		   for(i=0; i<str.length();i++)
 		    {
-		       if((str.charAt(i)-'a')>=0 && (str.charAt(i)-'a')<=26)
-			        hashString[str.charAt(i)-'a'] = true;
+           if((str.charAt(i)-'a')>=0 && (str.charAt(i)-'a')<=26)
+			        hashString.put(s.charAt(i),true);
 		    }   
 
-		   for(i=0; i<str.length();i++)
-		    {
-           if((str.charAt(i)-'a')>=0 && (str.charAt(i)-'a')<=26)
-           {
-		           if(hashString[str.charAt(i)-'a'])
-		              count++;
-		           hashString[i] = false;
-           }
-		    }
+        if(hashString.size()==26)                               // Checking if a-z alphabets present or not
+        {
+           return answer1; 
+        }
 
-                  if(count==26)                               // Checking if a-z alphabets present or not
-                  {
-                     return answer1; 
-                  }
+    }                                          
 
-      }                                          
-
-                  return answer2;
+      return answer2;
 	   }
 
 	public static void main(String[] args)
