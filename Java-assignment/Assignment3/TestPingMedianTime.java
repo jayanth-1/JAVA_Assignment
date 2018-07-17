@@ -10,16 +10,33 @@ public class TestPingMedianTime {
 	
 
     @Test
-	public void testCase3() {
+	public void negativeTestValidate() {
 
 		assertFalse(PingMedianTime.validateString("0.0.1"));
 
 }
 
     @Test
-	public void testCase4() {
+	public void positiveTestValidate2() {
 
 		assertTrue(PingMedianTime.validateString("127.0.0.1"));
 
 }
+
+    @Test
+	public void testOddPing() {
+        double d1 = 0.9;
+		assertEquals(d1,PingMedianTime.oddPingTime("0.9"),0.1);
+
+}
+
+    @Test
+	public void testEvenPing() {
+        double d1 = 0.9;
+        double d2 = 0.7;
+        double d3 = (d1 + d2)/2;
+		assertEquals(d3,PingMedianTime.evenPingTime("0.9","0.7"),0.1);
+
+}
+
 }
